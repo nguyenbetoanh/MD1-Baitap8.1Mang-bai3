@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="hienChu()">
+<h1>Faking Textarea</h1>
+<textarea id="ht"></textarea>
+<script>
+    let array =[];
+    let strArray=" hihi cậu là 1 đồ ngốc  !"
+    array =strArray.split("")
+    let str =""
+    console.log(array)
+    function hienChu(){
+        let input = document.getElementById('ht').value;
+        for (let i = 1; i <=input.length ; i++) {
+            str += array[i]
+            if(i ==25){
+                str=""
+            }
+        }
+        document.getElementById('ht').value=str
+        str=""
+        setTimeout(hienChu,1)
+    }
+</script>
+</body>
+</html>
